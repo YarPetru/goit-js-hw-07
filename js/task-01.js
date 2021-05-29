@@ -14,7 +14,7 @@ const items = document.querySelectorAll('.item');
 
 console.log(`В списке ${categories.children.length} категории`);
 
-console.log(items);
+// console.log(items);
 
 
 items.forEach(el => {

@@ -12,7 +12,9 @@ inputHolder.addEventListener('blur', () => {
     if (inputHolder.value.length === Number(inputHolder.dataset.length)) {
         inputHolder.classList.add('valid');
     }
-    else inputHolder.classList.add('invalid');
+    else {
+        inputHolder.classList.add('invalid')
+    };
 }
 );
 

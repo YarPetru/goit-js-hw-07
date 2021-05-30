@@ -14,14 +14,20 @@ const ingredients = [
 
 const list = document.querySelector('#ingredients');
 
-ingredients.forEach(elem => {
-    const ingredient = document.createElement('li');
-    ingredient.textContent = elem;
-    list.append(ingredient);
-    // console.log(ingredient);  
+const listItems = ingredients.map(option => {
+  const item = document.createElement('li');
+  item.textContent = option;
+
+  // console.log(item);
+  return item;
 })
 
-// console.log(list);
+// console.log(listItems);
+
+list.append(...listItems);
+
+
+
 
 
 

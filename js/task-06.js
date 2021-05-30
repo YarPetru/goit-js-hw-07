@@ -6,15 +6,25 @@
 
 const inputHolder = document.querySelector('input');
 
-console.dir(inputHolder);
-
 inputHolder.addEventListener('blur', () => {
+
     if (inputHolder.value.length === Number(inputHolder.dataset.length)) {
         inputHolder.classList.add('valid');
+
+        if (inputHolder.classList.contains('invalid')) {
+            inputHolder.classList.remove('invalid');
+        }       
     }
-    else {
-        inputHolder.classList.add('invalid')
-    };
+    else if (inputHolder.value.length !== Number(inputHolder.dataset.length) && inputHolder.value.length !== 0) {
+        inputHolder.classList.add('invalid');
+
+        if (inputHolder.classList.contains('valid')) {
+            inputHolder.classList.remove('valid');
+        }
+    }
+    else if (inputHolder.value.length === 0){
+        inputHolder.classList.remove('valid', 'invalid');
+    }
 }
 );
 

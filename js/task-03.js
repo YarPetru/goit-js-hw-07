@@ -29,16 +29,26 @@ const images = [
 
 const gallery = document.querySelector('#gallery');
 
-const markUp = images.forEach(({ url,alt }) => {
-    const markupItem =
-        `<li class='item'>
-            <img class='item-image' src=${url} alt='${alt}'>
-        </li>`;
-    gallery.insertAdjacentHTML('afterbegin', markupItem);
-});
 
-// console.log(markUp);
-// gallery.insertAdjacentHTML('afterbegin',markupItem);
+const galleryItems = images.map(option => {
+  const galleryEl = document.createElement('li');
+  galleryEl.classList.add('item');
+  
+  const galleryImage = document.createElement('img');
+  galleryEl.appendChild(galleryImage);
+  galleryImage.classList.add('item-image');
+  galleryImage.src = option.url;
+  galleryImage.alt = option.alt;
+  
+  console.log(galleryEl);
+  return galleryEl;
+
+})
+
+
+gallery.append(...galleryItems);
+
+
 
 
 

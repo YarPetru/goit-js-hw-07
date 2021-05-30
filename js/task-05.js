@@ -10,7 +10,7 @@ console.log(inputText);
 
 inputText.addEventListener('input', () => {
 
-    if (inputText.value != '') {
+    if (inputText.value.trim() != '') {
         return outputText.textContent = inputText.value;
     }
     else {

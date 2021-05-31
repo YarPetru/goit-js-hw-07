@@ -29,24 +29,38 @@ const images = [
 
 const gallery = document.querySelector('#gallery');
 
+const createGalleryMarkupItems = ({url, alt}) => {
+    return `
+      <li class = 'item'>
+        <img class = 'item-image' src = '${url}' alt = '${alt}'>
+      </li>
+    `;
+};
 
-const galleryItems = images.map(option => {
-  const galleryEl = document.createElement('li');
-  galleryEl.classList.add('item');
+const newMarkup = images.map(createGalleryMarkupItems).join('');
+console.log(newMarkup);
+
+gallery.insertAdjacentHTML('afterbegin', newMarkup);
+
+// gallery.insertAdjacentHTML('afterbegin', newMarkup);
+
+// const galleryItems = images.map(option => {
+//   const galleryEl = document.createElement('li');
+//   galleryEl.classList.add('item');
   
-  const galleryImage = document.createElement('img');
-  galleryEl.appendChild(galleryImage);
-  galleryImage.classList.add('item-image');
-  galleryImage.src = option.url;
-  galleryImage.alt = option.alt;
+//   const galleryImage = document.createElement('img');
+//   galleryEl.appendChild(galleryImage);
+//   galleryImage.classList.add('item-image');
+//   galleryImage.src = option.url;
+//   galleryImage.alt = option.alt;
   
-  console.log(galleryEl);
-  return galleryEl;
+//   console.log(galleryEl);
+//   return galleryEl;
 
-})
+// })
 
 
-gallery.append(...galleryItems);
+// gallery.append(...galleryItems);
 
 
 

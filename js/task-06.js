@@ -29,4 +29,15 @@ inputHolder.addEventListener('blur', () => {
 );
 
 
+// if (inputHolder.value.length === Number(inputHolder.dataset.length)) {
+// inputHolder.classList.add('valid'); inputHolder.classList.remove('invalid');
+// }
+// else if (inputHolder.value.length === 0){
+// inputHolder.classList.remove('valid');
+// inputHolder.classList.remove('invalid');
+// } else { inputHolder.classList.add('invalid');
+// inputHolder.classList.remove('valid');
+// }
+
+
 
